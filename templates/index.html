@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+<!-- 头部 -->
+<header>
+    <h1>数据可视化-信用卡中心</h1>
+    <div class="showTime"></div>
+    <script>
+        var t = null;
+        t = setTimeout(time, 1000);//開始运行
+        function time() {
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours();//获取时
+            var m = dt.getMinutes();//获取分
+            var s = dt.getSeconds();//获取秒
+            document.querySelector(".showTime").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+            t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+    </script>
+</header>
+<!--  主体 -->
+<section class="mainbox">
+    <div class="colunm">
+        <div class="panel bar">
+            <h2>交易额</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel gauge">
+            <h2>完成率</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+            <h2>分布</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+    </div>
+    <div class="colunm">
+        <!-- no模块 -->
+        <div class="no">
+            <div class="no-hd">
+                <ul>
+                    <li>123456</li>
+                    <li>123456</li>
+                    <li>123456</li>
+                </ul>
+            </div>
+            <div class="no-bd">
+                <ul>
+                    <li>购车分期</li>
+                    <li>装修分期</li>
+                    <li>分期通</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 地图模块 -->
+        <div class="map">
+            <div class="map1"></div>
+            <div class="map2"></div>
+            <div class="map3"></div>
+            <div id="main" class="chart"></div>
+        </div>
+    </div>
+    <div class="colunm">
+        <div class="panel bar2">
+            <h2>外包辅助占比</h2>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel">
+            <h2>柱状图</h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+        <div class="panel">
+            <h2>柱状图</h2>
+            <div class="chart">图表</div>
+            <div class="panel-footer"></div>
+        </div>
+
+    </div>
+</section>
+<script src="../static/js/flexible.js"></script>
+<script type="text/javascript" src="../static/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../static/js/echarts.min.js"></script>
+<script type="text/javascript" src="../static/map/yunnan.js"></script>
+<script type="text/javascript" src="../static/js/extendsMap.js"></script>
+<script src="../static/js/index.js"></script>
+
+</body>
+</html>
